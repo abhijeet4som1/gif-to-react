@@ -1,0 +1,79 @@
+@primaryColor : #FE7B1A;
+
+html, body{
+  width:100%;
+  height:100%;
+  background-color: @primaryColor;
+  padding: 0px;
+  margin: 0px;
+}
+
+#app, .main-cont{
+  height:100%;
+}
+
+//mail form container
+.mail-form{
+    padding: 3rem;
+    background-color:#fff;
+    -webkit-box-shadow: 2px 2px 113px -22px rgba(138,138,130,1);
+    -moz-box-shadow: 2px 2px 113px -22px rgba(138,138,130,1);
+    box-shadow: 2px 2px 113px -22px rgba(138,138,130,1);
+    border-radius: 4px;
+}
+
+.form-container{
+  width:100%;
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header{
+  color:#999999;
+  margin-bottom: 2rem;
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    margin-top: .5rem;
+    padding: 12px 51px;
+    border: 1px solid @primaryColor ;
+    border-radius: 40px;
+    background: transparent;
+    color: #CCC ;
+    letter-spacing: 1px;
+    font-size: 12px;
+    -webkit-transition: color .5s;
+          transition: color .5s;
+    z-index: 2;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: @primaryColor;
+      -webkit-transform:scaleX(0);
+          -ms-transform:scaleX(0);
+              transform:scaleX(0);
+      -webkit-transition: -webkit-transform .5s;
+              transition:         transform .5s;
+      border-radius: 40px;
+      z-index: -1;
+    }
+
+    &.enable{
+      color: #fff;
+      cursor: pointer;
+    }
+
+    &.enable:before {
+      -webkit-transform: scaleX(1);
+          -ms-transform: scaleX(1);
+              transform: scaleX(1);
+    }
+}
