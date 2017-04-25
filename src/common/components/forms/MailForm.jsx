@@ -30,7 +30,7 @@ class MailForm extends React.Component<{},{}>{
   render(){
     return(
         <div className='mail-form col-xs-8 col-sm-9 col-md-7 col-lg-5'>
-            <h3 className='header'>We Love Mail<img style={{verticalAlign:'middle'}} src='./img/star.png'></img></h3>
+            <h3 className='header'>We love mail<img style={{verticalAlign:'middle'}} src='./img/star.png'></img></h3>
             <form className='form'>
                 <Field name="name" label="name" component={InputField}/>
                 <Field name="mail" label="mail" component={InputField}/>
