@@ -1,10 +1,12 @@
 import React from 'react'
 
+/*Input field props*/
 interface InputFieldProps{
     label:string;
     name: string;
 }
 
+/*Text Input field*/
 class InputField extends React.Component<InputFieldProps,{}>{
 
     constructor(props){

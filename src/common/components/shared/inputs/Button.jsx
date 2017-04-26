@@ -7,11 +7,18 @@ class Button extends React.Component{
     }
 
     render(){
-        let isDisable = this.props.compPerc !== 100;
+        let classes= ['one-third','two-third','full'];
+        let isDisable = this.props.compPerc !== 2;
+        let finalClass = '',i=-1;
+        while(i<this.props.compPerc){
+            finalClass += ' '+ classes[++i];
+        }
         return(
-          <div className={`button ${!isDisable && 'enable'}`}
-            disabled={isDisable}>
-            {this.props.label}
+          <div className={`wrapper ${!isDisable && 'enable'}`}>
+            <div className={`button draw${finalClass}`}
+              disabled={isDisable}>
+              {this.props.label}
+            </div>
           </div>
         );
     }

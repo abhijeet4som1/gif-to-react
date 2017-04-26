@@ -4,25 +4,23 @@ import {connect} from 'react-redux';
 
 import {InputField, Button} from '../shared';
 
-interface MailFormProps {
-
-}
-
+/*Main form*/
 require('../../styles/form.less');
-class MailForm extends React.Component<{},{}>{
+class MainForm extends React.Component<{},{}>{
 
   constructor(props){
     super(props);
     this.getFormCompPerc = this.getFormCompPerc.bind(this);
   }
 
+ /* get number of textbox has data*/
   getFormCompPerc(){
-    let perc = 0;
+    let perc = -1;
     let formVal = this.props.formValue && this.props.formValue.values;
     if(formVal){
-        if(formVal.name)perc+=33;
-        if(formVal.mail)perc+=33;
-        if(formVal.message)perc+=34;
+        if(formVal.name)perc++;
+        if(formVal.mail)perc++;
+        if(formVal.message)perc++;
     }
     return perc;
   }
@@ -42,12 +40,12 @@ class MailForm extends React.Component<{},{}>{
   }
 }
 
-const mapStateToProps = (state) => ({
-    formValue:state.form.mail
+let mapStateToProps = (state) => ({
+    formValue:state.form.main
 });
 
 let wrappedComp = reduxForm({
-	form: 'mail'
-})(MailForm);
+	form: 'main'
+})(MainForm);
 
 export default connect(mapStateToProps)(wrappedComp);
